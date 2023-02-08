@@ -16,10 +16,12 @@
 			<p>
                 { article.content }
 			</p>
+			{#if article.userId === data.user?.userId}
             <form action="?/deleteArticle&id={ article.id }" method="POST">
                 <button type="submit" class="outline secondary">Delete Article</button>
             </form>
 			<a href="/{ article.id }" role="button" class="outline constrast" style="width: 100%; ">Edit Article</a>
+			{/if}
 		</article>
         {/each}
 	</div>
